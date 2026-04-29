@@ -1,27 +1,35 @@
-# AI Multi-Agent Controller: Plant Watering Simulation
+# 🤖 AI Multi-Agent: Resource Management
 
-## Overview
-This repository contains a three-stage AI project developed in Python for a multi-agent resource-management simulation. The core mission remains the same across all stages, but the environment's complexity and uncertainty increase, requiring different Artificial Intelligence approaches.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Artificial Intelligence](https://img.shields.io/badge/AI-FF9900?style=for-the-badge&logo=openai&logoColor=white)
+![Reinforcement Learning](https://img.shields.io/badge/Reinforcement_Learning-000000?style=for-the-badge)
 
-## The Domain: "Plant Watering"
-The simulation takes place on a 2D grid containing autonomous robots, water taps, plants, and walls. 
-* **The Goal:** Robots must navigate the grid, load water from taps, and pour it onto plants to meet their specific water requirements.
-* **The Challenge:** Robots have limited water-carrying capacities, and as the project progresses, the environment introduces stochastic action failures, randomized rewards, and completely unknown probabilities.
+A three-stage Artificial Intelligence project demonstrating the evolution of decision-making algorithms in autonomous agents. The system focuses on solving a logical resource-management problem (plant watering) under increasingly complex and unpredictable mathematical models.
 
-## Project Stages
-*(Note: The full assignment instructions and rules are available as PDF files inside each respective folder).*
+## 🌍 The Domain & Challenge
+Autonomous robots inhabit a logical 2D grid containing water taps, plants, and obstacles. The primary objective is to output an optimal policy—a mathematical sequence of actions or state-action mappings—to successfully manage resources.
 
-* **Part 1: Deterministic Environments (Folder: `Part1-Deterministic`)**
-  * **Task:** Find the optimal sequence of actions to water all plants.
-  * **Algorithms:** Implemented heuristic search algorithms (A*, GBFS) for optimal path-finding and planning.
-  
-* **Part 2: Stochastic Environments (Folder: `Part2-Stochastic-MDP`)**
-  * **Task:** Maximize expected rewards within a strict step horizon. The world is modeled as a Markov Decision Process (MDP) where defective robots have a probability to fail actions, and plants yield random rewards.
-  * **Algorithms:** Developed an MDP-based controller to choose the best next action per state.
+The project is structured to demonstrate how different AI paradigms handle computational uncertainty:
+* **Stage 1:** Perfect knowledge and predictable outcomes.
+* **Stage 2:** Known probabilities with stochastic state transitions.
+* **Stage 3:** Completely unknown environment requiring learning on the fly.
 
-* **Part 3: Unknown Environments (Folder: `Part3-Reinforcement-Learning`)**
-  * **Task:** Optimize strategies dynamically in a world where the robots' success rates and plant reward distributions are completely unknown to the agent.
-  * **Algorithms:** Applied Reinforcement Learning (Adaptive Dynamic Programming - ADP) to learn the environment's models on the fly.
+## 🧠 AI Evolution Stages
 
-## Note on Codebase
-The core AI logic, heuristic functions, and RL algorithms were implemented by me (located in the `ex1.py`, `ex2.py`, and `ex3.py` files). The simulation engine, environment infrastructure, and test checkers were provided by the university course staff.
+### Part 1: Deterministic Environments
+* **Task:** Calculate and output the optimal, guaranteed sequence of actions to complete the mission.
+* **Algorithms Implemented:** Heuristic search algorithms including **A* (A-Star)** and **Greedy Best-First Search (GBFS)** for state-space path-finding.
+* **Location:** `/Part1-Deterministic`
+
+### Part 2: Stochastic Environments (MDP)
+* **Task:** Maximize expected rewards within a strict step limit. Actions have a probability of failure, and rewards are randomized.
+* **Algorithms Implemented:** Modeled the world as a **Markov Decision Process (MDP)**, calculating mathematical policies to choose the best next action per state.
+* **Location:** `/Part2-Stochastic-MDP`
+
+### Part 3: Unknown Environments (Reinforcement Learning)
+* **Task:** Dynamically optimize strategies in a world where success rates and reward distributions are completely hidden from the agent.
+* **Algorithms Implemented:** **Reinforcement Learning**, specifically **Adaptive Dynamic Programming (ADP)**, allowing the agent to learn the environment's model through continuous state exploration and exploitation.
+* **Location:** `/Part3-Reinforcement-Learning`
+
+## 🛠️ Implementation Note
+The core AI algorithms, heuristic functions, state evaluations, and RL logic (`ex1.py`, `ex2.py`, `ex3.py`) were developed entirely from scratch by me. The environment infrastructure, mathematical models, and automated test checkers were provided by the university.
